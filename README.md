@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/md_assets/banner.png" alt="LeadScout Banner" width="600" />
+</p>
 
-## Getting Started
+# 🚀 Lead-Scout
 
-First, run the development server:
+**Lead-Scout** is a modern web frontend built with Next.js and TypeScript. It interfaces with the SaaSquatch backend to help users explore, filter, and prioritize high-potential business leads. The application offers a fast, responsive UI with scalable architecture for future enhancements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🔗 **Live App**: [https://lead-scout-lac.vercel.app](https://lead-scout-lac.vercel.app)
+
+---
+
+## 🧩 Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) 14+
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with PostCSS
+- **Build Tooling**: Vercel deployment
+- **State Management**: React Context (or optionally Redux/Server Components)
+- **API Integration**: RESTful POST to SaaSquatch `/score-leads`
+
+---
+
+## 📁 Project Structure
+```
+LEAD-SCOUT/
+├── app/ # App routes & layout (Next.js App Router)
+├── public/ # Static assets
+├── types/ # TypeScript interfaces/types
+├── .gitignore
+├── LICENSE
+├── next.config.ts # Next.js configuration
+├── postcss.config.mjs # Tailwind/PostCSS config
+├── package.json
+├── Procfile # For deployment (if needed outside Vercel)
+├── README.md
+├── tsconfig.json # TypeScript compiler options
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Install dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+```
 
-## Learn More
+2. Run locally
+```
+npm run dev
+```
+Navigate to http://localhost:3000 to view the app.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
+This project is deployed via Vercel and automatically builds from the main branch.
+- Production URL: https://lead-scout-lac.vercel.app
+- Configure environment variables in Vercel if connecting to an external API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 📡 API Integration
+The frontend connects to the SaaSquatch ML backend to fetch hot lead predictions:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+POST /score-leads
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example payload:
+```
+{
+  "industry": "Technology",
+  "location": "California",
+  "page": 1,
+  "page_size": 5
+}
+```
+
+## 🛠️ Customization
+- Update default industries or regions via the UI components in app/
+- Add new filters, sorting options, or visualizations by extending the frontend logic
+
+## 📄 License
+MIT License — free to use, modify, and distribute.
